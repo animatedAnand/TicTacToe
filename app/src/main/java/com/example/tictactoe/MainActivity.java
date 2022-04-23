@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                current_button.setText("X");
                array[cbv]=2;
                if(winner==0)
-               winner=showResponse(0);
+               winner=showResponse(1);
                if(winner==0) tv_player_turn.setText("Player O turn");
                current_player=0;
            }
@@ -95,17 +95,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private int showResponse(int current_player) {
+        int cur_win=0;
         for(int i=0;i<8;i++)
         {
             if((array[winningCombo[i][0]]>0) && (array[winningCombo[i][0]]==array[winningCombo[i][1]])
                     && (array[winningCombo[i][0]]==array[winningCombo[i][2]]))
             {
-                if(current_player==0) {tv_player_turn.setText("Player O won!");}
-                else {tv_player_turn.setText("Player X won!");}
+                if(current_player==0) {tv_player_turn.setText("Player O won!"); cur_win=1;}
+                else {tv_player_turn.setText("Player X won!"); cur_win=2;}
                 btArray[winningCombo[i][0]].setBackgroundColor(Color.parseColor("#A62B2B"));
                 btArray[winningCombo[i][1]].setBackgroundColor(Color.parseColor("#A62B2B"));
                 btArray[winningCombo[i][2]].setBackgroundColor(Color.parseColor("#A62B2B"));
-                return 1;
+                return cur_win;
             }
         }
         return 0;
