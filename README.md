@@ -23,6 +23,8 @@ This app features a single activity with an interactive user interface and color
     </td>
   </tr>
 </table>
+
+## ..
 <table>
   <tr>
     <td>
