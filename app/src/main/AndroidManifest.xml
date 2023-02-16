@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TicTacToe">
         <activity
-            android:name=".MainActivity"
+            android:name="com.animated_anand.tictactoe.MainActivity"
             android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
